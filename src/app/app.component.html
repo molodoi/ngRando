@@ -1,0 +1,8 @@
+<h1>Hello {{name}} !!</h1>
+
+<!-- Structural directive https://angular.io/guide/structural-directives
+    On bloucle sur notre tableaux de randos hikes avec *ngFor
+-->
+<div *ngFor="let hike of hikes">
+    {{ hike.name }}
+</div>
