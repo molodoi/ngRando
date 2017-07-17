@@ -22,7 +22,13 @@ export class AppComponent  {
   } 
 
   ngOnInit(){
-    this.hikes = this._hikeService.getHikes();
+    //this.hikes = this._hikeService.getHikes();
+    this._hikeService.getHikesFromApi()
+      .subscribe(
+        res => this.hikes = res,
+        err => console.error(err.status)
+      );
+
     //console.log(this.hikes);
   }
 
