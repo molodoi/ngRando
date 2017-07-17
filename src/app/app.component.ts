@@ -11,30 +11,10 @@ import { HikeService } from './hike/hike.service';
 })
 export class AppComponent  { 
   name = 'Rando';
-  hikes: Hike[];
-  //private _hikeService: HikeService;
-
-  // Dans un constructeur, on ne doit jamais faire d'opération couteuse comme un appelle à un service. 
-  // Le constructeur sert uniquement à créer un objet et à définir son état en initialisant des variables représentatnt cet état à l'aide de variables éventuellemnt passées en paramètre dudit constructeur. Faire davantage dans un constructeur est souvent source de regrets plus tard ; )
-  constructor( private _hikeService: HikeService ){
-    //this._hikeService = _hikeService;
-    //this.hikes = this._hikeService.getHikes();
-  } 
-
-  ngOnInit(){
-    //this.hikes = this._hikeService.getHikes();
-    this._hikeService.getHikesFromApi()
-      .subscribe(
-        res => this.hikes = res,
-        err => console.error(err.status)
-      );
-
-    //console.log(this.hikes);
-  }
+  
 
 }
-
-// Proprité @Component
+// Propriété @Component
 // Animations - liste des animations de ce composant
 // ChangeDetection - stratégie de détection de changement utilisée par ce composant
 // Stratégie d'encapsulation style encapsulation utilisée par ce composant

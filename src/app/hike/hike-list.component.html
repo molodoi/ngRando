@@ -1,1 +1,7 @@
 <h2> Liste de randos</h2>
+
+<div *ngFor="let hike of hikes">
+    <h3>{{ hike.name }} </h3>
+    <p>Desc : {{ hike.description }}</p>
+    <hr />
+</div>
