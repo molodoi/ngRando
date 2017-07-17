@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Hike } from './shared/hike';
+import { Hike } from './hike/hike';
+import { HikeService } from './hike/hike.service';
 
 // https://angular.io/api/core/Component
 @Component({
@@ -11,35 +12,19 @@ import { Hike } from './shared/hike';
 export class AppComponent  { 
   name = 'Rando';
   hikes: Hike[];
+  //private _hikeService: HikeService;
 
-  constructor(){
-    this.hikes = [
-      {
-        "name": "Saint-Aubin-du-Cormier",
-        "region": "Bretagne",
-        "area": "Ille-et-Vilaine",
-        "startingPoint": "Plan d'eau",
-        "distance": 12.8,
-        "distanceUnit": "km",
-        "duration": 240,
-        "heightDifference": 267,
-        "description": "Randonnée sympa, à démarrer par le plan d'eau pour finir sur les hauteurs de Saint Aubin. Rochers imposants et des arbres magnifiques sont effectivement au rendez-vous. Bonne balade",
-        "evaluation": [4, 5, 3]
-      },
-      {
-        "name": "Vallée du Couesnon",
-        "region": "Bretagne",
-        "area": "Ille-et-Vilaine",
-        "startingPoint": "Château de la ville olivier",
-        "distance": 15.6,
-        "distanceUnit": "km",
-        "duration": 270, 
-        "heightDifference": 200,
-        "description": "Il faut être en forme pour cette rando car il y a beaucoup de dénivelés. Mais le jeu en vaut la chandelle car admirer les bords du Couesnon est un régal. Bonne randonnée ",
-        "evaluation": [5, 5]
-      }
-    ]
+  // Dans un constructeur, on ne doit jamais faire d'opération couteuse comme un appelle à un service. 
+  // Le constructeur sert uniquement à créer un objet et à définir son état en initialisant des variables représentatnt cet état à l'aide de variables éventuellemnt passées en paramètre dudit constructeur. Faire davantage dans un constructeur est souvent source de regrets plus tard ; )
+  constructor( private _hikeService: HikeService ){
+    //this._hikeService = _hikeService;
+    //this.hikes = this._hikeService.getHikes();
   } 
+
+  ngOnInit(){
+    this.hikes = this._hikeService.getHikes();
+    //console.log(this.hikes);
+  }
 
 }
 
