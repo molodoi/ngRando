@@ -11,6 +11,7 @@ import { HikeService } from './hike.service';
 export class HikeListComponent{
 
     hikes: Hike[];
+    searchTerm: string;
     //private _hikeService: HikeService;
 
     // Dans un constructeur, on ne doit jamais faire d'opération couteuse comme un appelle à un service. 
@@ -19,6 +20,7 @@ export class HikeListComponent{
         //this._hikeService = _hikeService;
         //this.hikes = this._hikeService.getHikes();
     } 
+
 
 
     ngOnInit(){

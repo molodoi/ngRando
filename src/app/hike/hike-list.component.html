@@ -1,7 +1,16 @@
 <h2> Liste de randos</h2>
-
-<div *ngFor="let hike of hikes">
-    <a [routerLink]="['/hikes', hike.id]"><h3>{{ hike.name }} </h3></a>
+<div class="form-group">
+    <label for="searchTerm">Filtrer par : </label>
+    <!-- 
+        2 way databinding
+        [] = depuis tyscript vers les templates
+        () = depuis les templates vers typescript 
+        [()] = banana in box         
+    -->
+    <input type="text" class="form-control" id="searchTerm" placeholder="Keyword" [(ngModel)]="searchTerm">
+</div>
+<div *ngFor="let hike of hikes | hikeFilter:searchTerm">
+    <a [routerLink]="['/hikes', hike.id]"><h3>{{ hike.name | uppercase }} </h3></a>
     <p>Desc : {{ hike.description }}</p>
     <hr />
 </div>
