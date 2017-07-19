@@ -24,7 +24,7 @@ import { PageNotFoundComponent }  from './page-not-found.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'hikes', component: HikeListComponent },
-      { path: 'hikes/:id', component: HikeDetailsComponent },
+      { path: 'hike/:id', component: HikeDetailsComponent },
       { path: 'contact', component: ContactUsComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }

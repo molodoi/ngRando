@@ -10,7 +10,9 @@
     <input type="text" class="form-control" id="searchTerm" placeholder="Keyword" [(ngModel)]="searchTerm">
 </div>
 <div *ngFor="let hike of hikes | hikeFilter:searchTerm">
-    <a [routerLink]="['/hikes', hike.id]"><h3>{{ hike.name | uppercase }} </h3></a>
-    <p>Desc : {{ hike.description }}</p>
+    <!--a [routerLink]="['/hike', hike.id]"><h3>{{ hike.name | uppercase }} </h3></a>
+    <p>Desc : {{ hike.description }}</p-->
+    
+    <hike-summary [hike]="hike" (togglehikeasfavorite)="toggleToMyTodoHikes($event)"></hike-summary>
     <hr />
 </div>

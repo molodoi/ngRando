@@ -10,4 +10,5 @@ export class Hike {
     heightDifference: number; // difficulté
     description: string; 
     evaluation: number[]; // tableau de nombre  
+    dateAddedAsTodo?: number;
 }
