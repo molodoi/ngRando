@@ -5,7 +5,9 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [
+        CommonModule
+    ],
     declarations: [HomeComponent],
     exports: [HomeComponent]
 })

@@ -16,8 +16,8 @@ import { ContactUsComponent }  from './contact/contact-us.component';
 import { PageNotFoundComponent }  from './page-not-found.component';
 
 @NgModule({ //NgModule decorator and metadata.
-  imports:      [ 
-    BrowserModule, 
+  imports:      [
+    BrowserModule,
     HikeModule, 
     HttpModule, 
     HomeModule, 
