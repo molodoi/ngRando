@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -21,6 +22,7 @@ import { PageNotFoundComponent }  from './page-not-found.component';
     HttpModule, 
     HomeModule, 
     ContactModule, 
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'hikes', component: HikeListComponent },
